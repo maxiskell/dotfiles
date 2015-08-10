@@ -27,7 +27,7 @@ set showcmd
 " set the commandheight
 set cmdheight=2
 
-colo xoria256
+colo genericdc
 
 " Let Gstatus split vertically instead of horizontally
 set diffopt+=vertical
@@ -66,6 +66,14 @@ augroup END
 
 " }}}
 
+" HTML ---------------------- {{{
+augroup filetype_html
+    autocmd!
+    autocmd FileType html.blade :set nowrap
+augroup END
+
+" }}}
+
 " Markdown ---------------------- {{{
 augroup filetype_markdown
     autocmd!
@@ -79,6 +87,13 @@ augroup filetype_behat
     autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 " }}}
+
+" Coffeescript ---------------------- {{{
+augroup filetype_coffee
+  autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+augroup END
+" }}}
+
 
 
 """"""""""
@@ -110,6 +125,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ggreer/the_silver_searcher'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'StanAngeloff/php.vim'
@@ -130,6 +146,14 @@ Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'joonty/vim-phpunitqf.git'
 
 Plugin 'scrooloose/syntastic'
+
+Plugin 'SingleCompile'
+
+"Plugin 'Slava/tern-meteor'
+
+Plugin 'marijnh/tern_for_vim'
+
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 
@@ -205,6 +229,8 @@ nnoremap <leader>h :nohlsearch<cr>
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
+" Compile and run a single (current) C source file
+nnoremap <leader>c :SCCompileRun<cr>
 
 " }}}
 
@@ -228,7 +254,7 @@ nnoremap L $
 " Move a line below
 nnoremap J ddp
 " Move a line above
-nnoremap K ddkP
+nnoremap K ddkkp
 
 " Easier window navigation
 nnoremap <C-h> <C-w>h
@@ -272,8 +298,6 @@ vnoremap " <esc>`>a"<esc>`<i"<esc>`>l
 
 " Map 'inside parens' to p
 onoremap p i(
-" Until the end of a function's body
-onoremap b /return<cr>
 " Inside next parens
 onoremap in( :<c-u>normal! f(vi(<cr>
 " Inside last parens
@@ -361,8 +385,8 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 
 " {{{
 
-let b:easytags_auto_highlight = 0
-let b:easytags_on_cursorhold = 1
+let g:easytags_auto_highlight = 0
+let g:easytags_on_cursorhold = 1
 
 " }}}
 
@@ -528,4 +552,3 @@ nmap ,4 :call InterfaceExtension()<cr>
 nmap ,5 :call InterfaceImplementation()<cr>
 
 " }}}
-

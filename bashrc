@@ -135,3 +135,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 if [ "x$TERM" = "xxterm" ]; then
   export TERM="xterm-256color"
 fi
+
+export NVM_DIR="/home/maxi/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
