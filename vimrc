@@ -7,7 +7,7 @@
 " be iMproved
 set nocompatible
 " Use 256 colors
-set t_Co=256
+set t_Co=16
 " Always show what mode I'm currently editing in
 set showmode
 " Always show line numbers
@@ -27,7 +27,7 @@ set showcmd
 " set the commandheight
 set cmdheight=2
 
-colo genericdc
+colo monochrome
 
 " Let Gstatus split vertically instead of horizontally
 set diffopt+=vertical
@@ -42,7 +42,6 @@ set diffopt+=vertical
 " Filetype recognition ---------------------- {{{
  
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead *.blade.php set filetype=blade
 autocmd BufNewFile,BufRead *.scss set filetype=sass
 
 " }}}
@@ -66,14 +65,6 @@ augroup END
 
 " }}}
 
-" HTML ---------------------- {{{
-augroup filetype_html
-    autocmd!
-    autocmd FileType html.blade :set nowrap
-augroup END
-
-" }}}
-
 " Markdown ---------------------- {{{
 augroup filetype_markdown
     autocmd!
@@ -87,13 +78,6 @@ augroup filetype_behat
     autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 " }}}
-
-" Coffeescript ---------------------- {{{
-augroup filetype_coffee
-  autocmd BufNewFile,BufRead *.coffee set filetype=coffee
-augroup END
-" }}}
-
 
 
 """"""""""
@@ -131,7 +115,6 @@ Plugin 'bling/vim-airline'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
-Plugin 'xsbeats/vim-blade'
 Plugin 'uguu-org/vim-matrix-screensaver' 
 Plugin 'othree/html5.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -146,14 +129,6 @@ Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'joonty/vim-phpunitqf.git'
 
 Plugin 'scrooloose/syntastic'
-
-Plugin 'SingleCompile'
-
-"Plugin 'Slava/tern-meteor'
-
-Plugin 'marijnh/tern_for_vim'
-
-Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 
@@ -328,17 +303,17 @@ onoremap al{ :<c-u>normal! F}va{<cr>
 " Plugin-specific mappings ---------------------- {{{
 
 " NERDTree
-nnoremap <c-b> :NERDTreeToggle<cr>
+nnoremap <c-x> :NERDTreeToggle<cr>
 " Tagbar
 nnoremap <silent> <leader>z :TagbarToggle<cr>
 
 " Run tests
-nnoremap <leader>m :Test<cr>
+"nnoremap <leader>m :Test<cr>
 " PHP namespaces
-inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
-noremap <leader>u :call PhpInsertUse()<CR>
-inoremap <leader>ex <C-O>:call PhpExpandClass()<CR>
-nnoremap <leader>ex :call PhpExpandClass()<CR>
+"inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
+"noremap <leader>u :call PhpInsertUse()<CR>
+"inoremap <leader>ex <C-O>:call PhpExpandClass()<CR>
+"nnoremap <leader>ex :call PhpExpandClass()<CR>
 
 " }}}
 
@@ -349,11 +324,11 @@ nnoremap <leader>ex :call PhpExpandClass()<CR>
 
 " {{{
 
-abbrev amm !php artisan make:model
-abbrev amc !php artisan make:controller
-abbrev amg !php artisan make:migration
-iabbrev funciton function
-iabbrev calss class
+"abbrev amm !php artisan make:model
+"abbrev amc !php artisan make:controller
+"abbrev amg !php artisan make:migration
+"iabbrev funciton function
+"iabbrev calss class
 
 "}}}
 
@@ -387,6 +362,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 
 let g:easytags_auto_highlight = 0
 let g:easytags_on_cursorhold = 1
+let g:easytags_async = 1
 
 " }}}
 
@@ -448,107 +424,4 @@ let g:syntastic_check_on_wq = 1
 
 " {{{
 let g:php_refactor_command='php /usr/local/bin/refactor'
-" }}}
-
-
-""""""""""""""""""
-" PHP generators "
-""""""""""""""""""
-
-" {{{
-
-" Prepare a new PHP class
-function! Class()
-  let name = input('Class Name? ')
-  let namespace = input('Any Namespace? ')
-
-  if strlen(namespace)
-    exec "normal i<?php namespace " . namespace . ";\<C-m>\<C-m>"
-  else
-    exec "normal i<?php\<C-m>\<C-m>"
-  endif
-
-  " Open class
-  exec "normal iclass " . name . " {\<C-m>}\<C-[>O\<C-[>"
-
-  exec "normal i\<C-m>    public function __construct()\<C-m>{\<C-m>\<C-m>}\<C-[>"
-endfunction
-
-" Prepare a new PHP class extension
-function! ClassExtension()
-  let name = input('Class Name? ')
-  let extends = input('Extends...? ')
-  let namespace = input('Any Namespace? ')
-
-  if strlen(namespace)
-    exec "normal i<?php namespace " . namespace . ";\<C-m>\<C-m>"
-  else
-    exec "normal i<?php\<C-m>\<C-m>"
-  endif
-
-  " Open class
-  exec "normal iclass " . name . " extends " . extends . " {\<C-m>}\<C-[>O\<C-[>"
-
-  exec "normal i\<C-m>    public function __construct()\<C-m>{\<C-m>\<C-m>}\<C-[>"
-endfunction
-
-" Prepare a new PHP interface
-function! Interface()
-  let name = input('Interface Name? ')
-  let namespace = input('Any Namespace? ')
-
-  if strlen(namespace)
-    exec "normal i<?php namespace " . namespace . ";\<C-m>\<C-m>"
-  else
-    exec "normal i<?php\<C-m>\<C-m>"
-  endif
-
-  " Open class
-  exec "normal iinterface " . name " {\<C-m>}\<C-[>O\<C-[>"
-
-  exec "normal i\<C-m>    public function __construct()\<C-m>{\<C-m>\<C-m>}\<C-[>"
-endfunction
-
-" Prepare a new PHP interface extension
-function! InterfaceExtension()
-  let name = input('Interface Name? ')
-  let extends = input('Extends...? ')
-  let namespace = input('Any Namespace? ')
-
-  if strlen(namespace)
-    exec "normal i<?php namespace " . namespace . ";\<C-m>\<C-m>"
-  else
-    exec "normal i<?php\<C-m>\<C-m>"
-  endif
-
-  " Open class
-  exec "normal iinterface " . name . " extends " . extends . " {\<C-m>}\<C-[>O\<C-[>"
-
-  exec "normal i\<C-m>    public function __construct()\<C-m>{\<C-m>\<C-m>}\<C-[>"
-endfunction
-
-" Prepare a new PHP implementation
-function! InterfaceImplementation()
-  let name = input('Class Name? ')
-  let implements = input('Implements...? ')
-  let namespace = input('Any Namespace? ')
-
-  if strlen(namespace)
-    exec "normal i<?php namespace " . namespace . ";\<C-m>\<C-m>"
-  else
-    exec "normal i<?php\<C-m>\<C-m>"
-  endif
-
-  " Open class
-  exec "normal iclass " . name . " implements " . implements . " {\<C-m>}\<C-[>O\<C-[>"
-
-  exec "normal i\<C-m>    public function __construct()\<C-m>{\<C-m>\<C-m>}\<C-[>"
-endfunction
-
-nmap ,1 :call Class()<cr>
-nmap ,2 :call ClassExtension()<cr>
-nmap ,3 :call Interface()<cr>
-nmap ,4 :call InterfaceExtension()<cr>
-nmap ,5 :call InterfaceImplementation()<cr>
-
 " }}}
