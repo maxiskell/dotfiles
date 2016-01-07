@@ -26,11 +26,19 @@ set nowb
 set showcmd
 " set the commandheight
 set cmdheight=2
+" not wrapping text
+set nowrap
 
-colo monochrome
+colorscheme monochrome 
 
 " Let Gstatus split vertically instead of horizontally
 set diffopt+=vertical
+
+" Pussy-ready
+"set mouse=a
+
+" Disable gitgutter by default
+autocmd VimEnter * GitGutterDisable
 
 " }}}
 
@@ -105,30 +113,40 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 
+" Alternative light colorscheme
+Plugin 'karos/smpl-vim'
+
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ggreer/the_silver_searcher'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
-Plugin 'StanAngeloff/php.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'uguu-org/vim-matrix-screensaver' 
 Plugin 'othree/html5.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'StanAngeloff/php.vim'
 Plugin 'vim-php/vim-php-refactoring'
 Plugin 'arnaud-lb/vim-php-namespace'
 
 Plugin 'joonty/vim-phpunitqf.git'
 
+Plugin 'joonty/vdebug.git'
+
 Plugin 'scrooloose/syntastic'
+
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -194,8 +212,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " Fast saves and quits
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <leader>x :wq<cr>
-nnoremap <leader>a :q!<cr>
+nnoremap <leader>a :wq<cr>
+nnoremap <leader>x :q!<cr>
 
 " Remove search results
 nnoremap <leader>h :nohlsearch<cr>
@@ -231,7 +249,7 @@ nnoremap J ddp
 " Move a line above
 nnoremap K ddkkp
 
-" Easier window navigation
+" Easier split navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -341,6 +359,8 @@ nnoremap <silent> <leader>z :TagbarToggle<cr>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
+let g:ctrlp_extensions = ['tag']
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
     \ --ignore .git
     \ --ignore .git
@@ -424,4 +444,42 @@ let g:syntastic_check_on_wq = 1
 
 " {{{
 let g:php_refactor_command='php /usr/local/bin/refactor'
+" }}}
+
+
+"""""""""""
+" Vdebug  "
+"""""""""""
+
+" {{{
+let g:vdebug_options = {}
+let g:vdebug_options['ide_key'] = 'netbeans-xdebug'
+let g:vdebug_options['break_on_open'] = 0
+" }}}
+
+
+"""""""""""
+" Grepper "
+"""""""""""
+
+" {{{
+nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
+vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
+
+function! s:GrepOperator(type)
+    let saved_unnamed_register = @@
+
+    if a:type ==# 'v'
+        normal! `<v`>y
+    elseif a:type ==# 'char'
+        normal! `[v`]y
+    else
+        return
+    endif
+
+    silent execute "grep! -R " . shellescape(@@) . " ."
+    copen
+
+    let @@ = saved_unnamed_register
+endfunction
 " }}}
