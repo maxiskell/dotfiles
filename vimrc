@@ -7,7 +7,7 @@
 " be iMproved
 set nocompatible
 " Use 256 colors
-set t_Co=16
+set t_Co=256
 " Always show what mode I'm currently editing in
 set showmode
 " Always show line numbers
@@ -29,7 +29,8 @@ set cmdheight=2
 " not wrapping text
 set nowrap
 
-colorscheme monochrome 
+"set background=dark
+colorscheme xoria256
 
 " Let Gstatus split vertically instead of horizontally
 set diffopt+=vertical
@@ -38,7 +39,7 @@ set diffopt+=vertical
 "set mouse=a
 
 " Disable gitgutter by default
-autocmd VimEnter * GitGutterDisable
+"autocmd VimEnter * GitGutterDisable
 
 " }}}
 
@@ -107,22 +108,26 @@ filetype plugin indent on
 
 call vundle#begin()
 
+" Alternate colorschemes
+"Plugin 'hickop/vim-hickop-colors'
+"Plugin 'pbrisbin/vim-colors-off'
+
 " Let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
 " Plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 
-" Alternative light colorscheme
-Plugin 'karos/smpl-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'kien/ctrlp.vim'
-Plugin 'ggreer/the_silver_searcher'
+"Plugin 'ggreer/the_silver_searcher'
+Plugin 'rking/ag.vim'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'uguu-org/vim-matrix-screensaver' 
@@ -130,7 +135,7 @@ Plugin 'othree/html5.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
@@ -140,13 +145,12 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'vim-php/vim-php-refactoring'
 Plugin 'arnaud-lb/vim-php-namespace'
 
-Plugin 'joonty/vim-phpunitqf.git'
+"Plugin 'joonty/vim-phpunitqf.git'
 
-Plugin 'joonty/vdebug.git'
+"Plugin 'joonty/vdebug.git'
 
 Plugin 'scrooloose/syntastic'
 
-Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -403,7 +407,7 @@ set fileencoding=utf-8
 " Hide the default mode text
 set noshowmode
 
-let g:airline_theme='jellybeans'
+let g:airline_theme='lucius'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
