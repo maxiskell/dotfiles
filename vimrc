@@ -3,11 +3,11 @@
 """""""""""""""""""""""""
 
 " General config ---------------------- {{{
- 
+
 " be iMproved
 set nocompatible
 " Use 256 colors
-set t_Co=256
+set t_Co=16
 " Always show what mode I'm currently editing in
 set showmode
 " Always show line numbers
@@ -30,7 +30,7 @@ set cmdheight=2
 set nowrap
 
 "set background=dark
-colorscheme xoria256
+colorscheme monochrome
 
 " Let Gstatus split vertically instead of horizontally
 set diffopt+=vertical
@@ -43,15 +43,20 @@ set diffopt+=vertical
 
 " }}}
 
+" Abbr's ---------------------- {{{
+abbreviate modelgen !./artisan models:generate -p app/Models -om --namespace=SmarttlyBE\\Models
+" }}}
+
 
 """"""""""""""""
 " Autocommands "
 """"""""""""""""
 
 " Filetype recognition ---------------------- {{{
- 
+
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.scss set filetype=sass
+autocmd BufNewFile,BufRead *.blade.php set filetype=blade
 
 " }}}
 
@@ -70,6 +75,7 @@ augroup filetype_php
     autocmd FileType php :iabbrev prif private function
     autocmd FileType php :iabbrev prof protected function
     autocmd FileType php :iabbrev func function
+    autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
 augroup END
 
 " }}}
@@ -82,19 +88,18 @@ augroup filetype_markdown
 augroup END
 " }}}
 
-" Behat ---------------------- {{{
-augroup filetype_behat
-    autocmd FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" TypeScrypt ---------------------- {{{
+augroup filetype_typescript
+    autocmd!
+    autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 augroup END
 " }}}
-
 
 """"""""""
 " Vundle "
 """"""""""
 
 " Config ---------------------- {{{
- 
 filetype off
 
 " Set the runtime path to include Vundle and initialize
@@ -130,7 +135,7 @@ Plugin 'rking/ag.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-surround'
-Plugin 'uguu-org/vim-matrix-screensaver' 
+Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'othree/html5.vim'
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -144,12 +149,16 @@ Plugin 'majutsushi/tagbar'
 Plugin 'StanAngeloff/php.vim'
 Plugin 'vim-php/vim-php-refactoring'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'jwalton512/vim-blade'
 
 "Plugin 'joonty/vim-phpunitqf.git'
 
 "Plugin 'joonty/vdebug.git'
 
 Plugin 'scrooloose/syntastic'
+
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'leafgarland/typescript-vim'
 
 
 call vundle#end()
@@ -164,10 +173,10 @@ call vundle#end()
 
 " Spaces instead of tabs
 set expandtab
-" I like 4 spaces for indenting
-set shiftwidth=4
-" I like 4 stops
-set tabstop=4
+" I like 2 spaces for indenting
+set shiftwidth=2
+" I like 2 stops
+set tabstop=2
 " Always  set auto indenting on
 set autoindent
 " Copy the previous indentation on autoindenting
@@ -175,7 +184,7 @@ set copyindent
 " Use multiple of shiftwidth when indenting with '<' and '>'
 set shiftround
 " When hitting <BS>, pretend like a tab is removed
-set softtabstop=4
+set softtabstop=2
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -193,7 +202,7 @@ set ignorecase
 " Ignore case if search pattern is all lowecase
 set smartcase
 " Highlight a term when searching for it
-set hlsearch 
+set hlsearch
 " Incremental search
 set incsearch
 
@@ -321,7 +330,7 @@ onoremap an{ :<c-u>normal! f{va{<cr>
 onoremap al{ :<c-u>normal! F}va{<cr>
 
 " }}}
- 
+
 " Plugin-specific mappings ---------------------- {{{
 
 " NERDTree
@@ -332,10 +341,10 @@ nnoremap <silent> <leader>z :TagbarToggle<cr>
 " Run tests
 "nnoremap <leader>m :Test<cr>
 " PHP namespaces
-"inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
-"noremap <leader>u :call PhpInsertUse()<CR>
-"inoremap <leader>ex <C-O>:call PhpExpandClass()<CR>
-"nnoremap <leader>ex :call PhpExpandClass()<CR>
+inoremap <leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <leader>u :call PhpInsertUse()<CR>
+inoremap <leader>ex <C-O>:call PhpExpandClass()<CR>
+nnoremap <leader>ex :call PhpExpandClass()<CR>
 
 " }}}
 
@@ -363,7 +372,7 @@ nnoremap <silent> <leader>z :TagbarToggle<cr>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:50'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10'
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
     \ --ignore .git
@@ -437,8 +446,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 " {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
 " }}}
 
 
@@ -486,4 +497,13 @@ function! s:GrepOperator(type)
 
     let @@ = saved_unnamed_register
 endfunction
+" }}}
+
+""""""""""""""
+" TypeScript "
+""""""""""""""
+
+" {{{
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 " }}}
