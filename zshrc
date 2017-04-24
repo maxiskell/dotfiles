@@ -5,7 +5,7 @@ COMPLETION_WAITING_DOTS="true"
 
 plugins=(git)
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/home/maxi/.config/composer/vendor/bin:$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/home/maxi/.local/bin:/home/maxi/.config/composer/vendor/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 alias zshconfig="vi ~/.zshrc"
