@@ -24,4 +24,4 @@ $ vim +PlugInstall
 
 Step 3: Code awesomely
 
-Happy coding! :)
+Happy hacking! :)
