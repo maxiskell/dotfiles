@@ -19,7 +19,7 @@ set nowrap
 
 " Coolest line numbers
 set number
-"set relativenumber
+set relativenumber
 
 " There's no sound like silence
 set visualbell
