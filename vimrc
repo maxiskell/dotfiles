@@ -111,7 +111,8 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " Vimscript folds ---------------------- {{{
 
 augroup filetype_vim
-    autocmd FileType vim setlocal foldmethod=marker
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 " }}}
@@ -119,9 +120,9 @@ augroup END
 " Nesquickfix ---------------------- {{{
 
 augroup quickfix
-    autocmd!
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost l*    lwindow
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l*    lwindow
 augroup END
 
 " }}}
@@ -258,25 +259,25 @@ let g:user_emmet_leader_key=','
 " MyStatusLine() {{{
 
 function! MyStatusLine()
-    let statusline = " "
-    " Filename (F -> full, f -> relative)
-    let statusline .= "%f"
-    " Buffer flags
-    let statusline .= "%( %h%1*%m%*%r%w%) "
-    let statusline .= "%{fugitive#statusline()}"
-    " Left/right separator
-    let statusline .= "%="
-    " File format and type
-    let statusline .= "[%{&ff}%(\/%Y%)] "
-    " Line & column
-    let statusline .= "[%l:%c%V] "
-    " Character under cursor (decimal)
-    let statusline .= "%03.3b "
-    " Character under cursor (hexadecimal)
-    let statusline .= "0x%02.2B "
-    " File progress
-    let statusline .= "| %P/%L "
-    return statusline
+  let statusline = " "
+  " Filename (F -> full, f -> relative)
+  let statusline .= "%f"
+  " Buffer flags
+  let statusline .= "%( %h%1*%m%*%r%w%) "
+  let statusline .= "%{fugitive#statusline()}"
+  " Left/right separator
+  let statusline .= "%="
+  " File format and type
+  let statusline .= "[%{&ff}%(\/%Y%)] "
+  " Line & column
+  let statusline .= "[%l:%c%V] "
+  " Character under cursor (decimal)
+  let statusline .= "%03.3b "
+  " Character under cursor (hexadecimal)
+  let statusline .= "0x%02.2B "
+  " File progress
+  let statusline .= "| %P/%L "
+  return statusline
 endfunction
 
 " }}}
