@@ -156,8 +156,8 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
 " Normal ---------------------- {{{
 
+" Life's too short
 nnoremap ; :
-nnoremap <space> viw
 
 " Down is really the next line
 nnoremap j gj
