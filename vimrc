@@ -19,7 +19,7 @@ set nowrap
 
 " Coolest line numbers
 set number
-set relativenumber
+"set relativenumber
 
 " There's no sound like silence
 set visualbell
@@ -232,6 +232,20 @@ call plug#end()
 " Plugins settings                                                   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" NERDTree ---------------------- {{{
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10'
+let g:ctrlp_extensions = ['tag']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|venv|node_modules|vendor)$',
+  \ 'file': '\v\.(exe|so|dll|pyc)$'
+  \ }
+let NERDTreeIgnore = ['\.pyc$']
+
+"}}}
+
 " CtrlP ---------------------- {{{
 
 let g:ctrlp_map = '<c-p>'
@@ -249,6 +263,14 @@ let g:ctrlp_custom_ignore = {
 
 let g:user_emmet_mode='a'
 let g:user_emmet_leader_key=','
+
+" }}}
+
+" ALE ---------------------- {{{
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
 
 " }}}
 
