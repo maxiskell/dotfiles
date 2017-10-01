@@ -19,7 +19,7 @@ set nowrap
 
 " Coolest line numbers
 set number
-"set relativenumber
+set relativenumber
 
 " There's no sound like silence
 set visualbell
@@ -212,7 +212,7 @@ vnoremap > >gv
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'L9'
+Plug 'vim-scripts/L9'
 Plug 'uguu-org/vim-matrix-screensaver'
 
 Plug 'ctrlpvim/ctrlp.vim'
