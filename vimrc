@@ -29,6 +29,9 @@ set noerrorbells
 set noswapfile
 set nobackup
 
+" Let vim read project-specific config files
+set exrc
+
 set statusline=%!MyStatusLine()
 
 " }}}
