@@ -286,6 +286,7 @@ function! MyStatusLine()
   let statusline .= "%f"
   " Buffer flags
   let statusline .= "%( %h%1*%m%*%r%w%) "
+  " Git branch
   let statusline .= "[%{fugitive#head(7)}]"
   " Left/right separator
   let statusline .= "%="
