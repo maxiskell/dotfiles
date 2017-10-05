@@ -286,7 +286,7 @@ function! MyStatusLine()
   let statusline .= "%f"
   " Buffer flags
   let statusline .= "%( %h%1*%m%*%r%w%) "
-  let statusline .= "%{fugitive#statusline()}"
+  let statusline .= "[%{fugitive#head(7)}]"
   " Left/right separator
   let statusline .= "%="
   " File format and type
