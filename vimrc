@@ -84,7 +84,7 @@ set incsearch
 " {{{
 
 " Rg is waaay cooler than the good ol' grep
-set grepprg=rg\ --vimgrep
+set grepprg=ag\ --vimgrep
 
 " }}}
 
