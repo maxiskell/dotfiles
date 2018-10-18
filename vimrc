@@ -19,7 +19,7 @@ set nowrap
 
 " Coolest line numbers
 set number
-set relativenumber
+"set relativenumber
 
 " There's no sound like silence
 set visualbell
@@ -43,8 +43,10 @@ set statusline=%!MyStatusLine()
 " {{{
 
 set t_Co=256
+set termguicolors
+colorscheme sierra
 set background=dark
-colorscheme xoria256
+let g:sierra_Twilight=1
 
 " }}}
 
@@ -106,8 +108,9 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 
 " Two-spaces haters ---------------------- {{{
 
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType cs setlocal shiftwidth=4 tabstop=4 softtabstop=4
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 " }}}
 
@@ -155,6 +158,10 @@ nnoremap <leader>h :nohlsearch<cr>
 " Wrap the word under cursor into single/double quotes
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+
+" Run it!
+nnoremap <leader>r :!node %<cr>
+nnoremap <leader>p :!php %
 
 " }}}
 
@@ -220,12 +227,14 @@ Plug 'uguu-org/vim-matrix-screensaver'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim', { 'for': 'html,javascript.jsx,handlebars,blade' }
+Plug 'mattn/emmet-vim', { 'for': 'html,xml,javascript.jsx,handlebars,blade' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
+Plug 'OrangeT/vim-csharp'
+Plug 'vim-vdebug/vdebug'
 
 call plug#end()
 
@@ -239,7 +248,7 @@ call plug#end()
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10'
+let g:ctrlp_match_window = 'top,order:btt,min:1,max:10'
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|venv|node_modules|vendor)$',
@@ -272,7 +281,7 @@ let g:user_emmet_leader_key=','
 " ALE ---------------------- {{{
 
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
+let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 
 " }}}
@@ -291,7 +300,7 @@ function! MyStatusLine()
   let statusline .= "%( %h%1*%m%*%r%w%) "
   " Git branch
   if exists('b:git_dir')
-    let statusline .= "[%{fugitive#head(7)}]"
+   let statusline .= "[%{fugitive#head(7)}]"
   endif
   " Left/right separator
   let statusline .= "%="
@@ -305,6 +314,7 @@ function! MyStatusLine()
   let statusline .= "0x%02.2B "
   " File progress
   let statusline .= "| %P/%L "
+
   return statusline
 endfunction
 
