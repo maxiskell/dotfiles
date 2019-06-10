@@ -27,17 +27,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-POLARIS_INSTALL_BIN="/home/maxi/dev/polaris/polaris-install/bin"
-PATH=$PATH:$POLARIS_INSTALL_BIN
-export POLARIS_INSTALL_BIN
-export PATH
-
 JAVA_HOME=/usr/local/java/jdk1.8.0_144
 PATH=$PATH:$JAVA_HOME/bin
 export JAVA_HOME
 export PATH
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

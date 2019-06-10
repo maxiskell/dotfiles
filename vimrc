@@ -8,17 +8,18 @@
 set nocompatible
 
 " Basic stuff
-set showmode
-set showcmd
 set ruler
-set laststatus=2
-set cmdheight=2
-set splitright splitbelow
-set wildmenu
 set nowrap
+set showcmd
+set showmode
+set wildmenu
+set cmdheight=2
+set laststatus=2
+set foldcolumn=1
+set splitright splitbelow
 
 " Coolest line numbers
-set number
+"set number
 "set relativenumber
 
 " There's no sound like silence
@@ -42,11 +43,10 @@ set statusline=%!MyStatusLine()
 
 " {{{
 
-set t_Co=256
 set termguicolors
-colorscheme sierra
 set background=dark
 let g:sierra_Twilight=1
+colorscheme sierra
 
 " }}}
 
@@ -160,8 +160,11 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
 " Run it!
-nnoremap <leader>r :!node %<cr>
-nnoremap <leader>p :!php %
+nnoremap <leader>r :!clear && node %<cr>
+nnoremap <leader>p :!clear && php %
+
+" Log it!
+nnoremap <leader>cl iconsole.log()<esc>ha
 
 " }}}
 
@@ -297,23 +300,19 @@ function! MyStatusLine()
   " Filename (F -> full, f -> relative)
   let statusline .= "%f"
   " Buffer flags
-  let statusline .= "%( %h%1*%m%*%r%w%) "
+  let statusline .= "%( %h%1*%m%*%r%w%)"
   " Git branch
   if exists('b:git_dir')
-   let statusline .= "[%{fugitive#head(7)}]"
+   let statusline .= " [%{fugitive#head(7)}] "
   endif
   " Left/right separator
   let statusline .= "%="
-  " File format and type
-  let statusline .= "[%{&ff}%(\/%Y%)] "
+  " File type
+  let statusline .= " %y "
   " Line & column
   let statusline .= "[%l:%c%V] "
-  " Character under cursor (decimal)
-  let statusline .= "%03.3b "
-  " Character under cursor (hexadecimal)
-  let statusline .= "0x%02.2B "
   " File progress
-  let statusline .= "| %P/%L "
+  let statusline .= "%P/%L "
 
   return statusline
 endfunction
