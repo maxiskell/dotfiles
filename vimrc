@@ -48,6 +48,12 @@ set background=dark
 let g:sierra_Twilight=1
 colorscheme sierra
 
+set guifont=Source\ Code\ Pro\ Semibold\ 12
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+
 " }}}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -236,8 +242,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
-Plug 'OrangeT/vim-csharp'
-Plug 'vim-vdebug/vdebug'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
@@ -318,3 +325,11 @@ function! MyStatusLine()
 endfunction
 
 " }}}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commands                                                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"{{{
+command Cpy !xclip -sel clip %
+"}}}
