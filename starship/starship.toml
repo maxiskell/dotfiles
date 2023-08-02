@@ -1,0 +1,51 @@
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$nodejs\
+$golang\
+$fill\
+$cmd_duration $jobs\
+$line_break\
+$character"""
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[golang]
+symbol=" "
+style="green"
+format = "[$symbol($version )]($style)"
+
+[fill]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "white"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"

@@ -1,0 +1,82 @@
+export ZSH="$HOME/.config/zsh"
+export ZSH_PLUGINS="$HOME/.config/zsh/plugins"
+
+source "$ZSH/config/path.sh"
+source "$ZSH/functions/ix.sh"
+source "$ZSH/utils/directories.sh"
+source "$ZSH/utils/git.sh"
+
+# plugins
+source "$ZSH_PLUGINS/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+source "$ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+source "$ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+source "$ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
+source "$ZSH_PLUGINS/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
+
+# history config
+export HISTFILE="$HOME/.cache/zsh/history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+
+# vi-vi-vi
+bindkey -v
+export KEYTIMEOUT=1
+export EDITOR='nvim'
+export VISUAL='nvim'
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+
+# aliases
+alias c="clear"
+alias e="exit"
+alias ez="v $ZSH/zshrc"
+alias lg="lazygit"
+alias sz="source ${HOME}/.zshrc"
+alias ta="tmux a -t"
+alias tls="tmux ls"
+alias tns="tmux new -s"
+alias v="nvim"
+alias vi="nvim"
+
+# zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=standout
+
+# zsh-autocomplete
+fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+zstyle ':autocomplete:*' delay 0.5  # seconds (float)
+zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+zstyle ':autocomplete:*history*:*' insert-unambiguous yes
+zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
+
+# fzf - https://github.com/junegunn/fzf
+# rosepine-dawn theme
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#797593,bg:#faf4ed,hl:#5f87af
+ --color=fg+:#575279,bg+:#f2e9e1,hl+:#b4637a
+ --color=info:#ea9d34,prompt:#575279,pointer:#286983
+ --color=marker:#907aa9,spinner:#575279,header:#87afaf'
+
+# asdf - https://asdf-vm.com/
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# zoxide - https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
+# starship - https://starship.rs/
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
+
+# https://direnv.net/
+eval "$(direnv hook zsh)"
