@@ -12,6 +12,9 @@ require('formatter').setup({
     lua = {
       require('formatter.filetypes.lua').stylua,
     },
+    markdown = {
+      require('formatter.filetypes.markdown').prettierd,
+    },
     javascript = {
       require('formatter.filetypes.javascript').prettierd,
     },
