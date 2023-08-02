@@ -37,6 +37,6 @@ alias lt="tree -L 1"
 alias lta="tree -a -L 1"
 
 # md + cd
-mkcd () {
+take () {
   md -- "$1" && cd -P -- "$1"
 }
