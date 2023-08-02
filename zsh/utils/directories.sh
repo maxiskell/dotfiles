@@ -36,11 +36,6 @@ alias la='ls -lAh'
 alias lt="tree -L 1"
 alias lta="tree -a -L 1"
 
-# fzf + cd
-fd () {
-  cd $(find * -type d | fzf)
-}
-
 # md + cd
 mkcd () {
   md -- "$1" && cd -P -- "$1"
