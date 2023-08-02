@@ -1,17 +1,17 @@
 export ZSH="$HOME/.config/zsh"
 export ZSH_PLUGINS="$HOME/.config/zsh/plugins"
 
-source "$ZSH/config/path.sh"
-source "$ZSH/functions/ix.sh"
-source "$ZSH/utils/directories.sh"
-source "$ZSH/utils/git.sh"
-
 # plugins
 source "$ZSH_PLUGINS/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$ZSH_PLUGINS/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
 source "$ZSH_PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 source "$ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh"
 source "$ZSH_PLUGINS/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
+
+source "$ZSH/config/path.sh"
+source "$ZSH/functions/ix.sh"
+source "$ZSH/utils/directories.sh"
+source "$ZSH/utils/git.sh"
 
 # history config
 export HISTFILE="$HOME/.cache/zsh/history"
