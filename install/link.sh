@@ -8,7 +8,16 @@ if [ ! -d $HOME/.config ]; then
     mkdir -p $HOME/.config
 fi
 
-config_dirs=$(find "$(pwd)/.." -type d -mindepth 1 -maxdepth 1 ! -path "*/.git" ! -path "*/install" | sed 's+/install/..++g')
+if [[ "$(pwd)" == *"install"* ]]; then
+  config_dirs=$(find "$(pwd)/.." -type d -mindepth 1 -maxdepth 1 ! -path "*/.git" ! -path "*/install" | sed 's+/install/..++g')
+else
+  config_dirs=$(find "$(pwd)" -type d -mindepth 1 -maxdepth 1 ! -path "*/.git" ! -path "*/install" | sed 's+/install/..++g')
+fi
+
+if [ -z "$config_dirs" ]; then
+  echo "No directories found.\n"
+  exit 0
+fi
 
 for config_dir in $config_dirs; do
   target=$HOME/.config/$(basename $config_dir)
@@ -31,6 +40,10 @@ if [ -e $HOME/.zshrc ]; then
   mv $HOME/.zshrc $HOME/.zshrc.old
 fi
 
-ln -s "$(pwd)/../zsh/zshrc" $HOME/.zshrc
+if [[ "$(pwd)" == *"install"* ]]; then
+  ln -s "$(pwd)/../zsh/zshrc" $HOME/.zshrc
+else
+  ln -s "$(pwd)/zsh/zshrc" $HOME/.zshrc
+fi
 
 echo "\nDone!\n"
