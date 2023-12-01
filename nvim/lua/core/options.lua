@@ -4,6 +4,7 @@ local o = vim.opt
 o.signcolumn = 'yes'
 o.background = 'light'
 o.termguicolors = true
+o.showtabline = 2
 
 -- line numbers
 o.number = true
