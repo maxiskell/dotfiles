@@ -3,8 +3,9 @@ local lsp = require 'lsp-zero'
 lsp.preset 'recommended'
 
 lsp.ensure_installed({
-  'gopls',
+  'emmet_ls',
   'eslint',
+  'gopls',
   'lua_ls',
   'tsserver',
 })
@@ -59,11 +60,38 @@ end)
 
 lsp.setup()
 
-require('lspconfig').lua_ls.setup({
+local lspconfig = require 'lspconfig'
+
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       diagnostics = {
         globals = { 'vim' },
+      },
+    },
+  },
+})
+
+lspconfig.emmet_ls.setup({
+  filetypes = {
+    'css',
+    'eruby',
+    'html',
+    'javascript',
+    'javascriptreact',
+    'less',
+    'pug',
+    'sass',
+    'scss',
+    'svelte',
+    'typescriptreact',
+    'vue',
+  },
+  init_options = {
+    html = {
+      options = {
+        -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+        ['bem.enabled'] = true,
       },
     },
   },
