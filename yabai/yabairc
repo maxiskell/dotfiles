@@ -22,3 +22,4 @@ yabai -m mouse_drop_action swap
 # app ignore list
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Digital Colour Meter$" manage=off
