@@ -9,8 +9,8 @@ k.set('n', 'H', '^')
 k.set('n', 'L', '$')
 k.set('n', 'j', 'gj')
 k.set('n', 'k', 'gk')
-k.set('n', '<leader>e', ':Oil --float .<cr>')
 k.set('n', '<leader>h', cmd.nohlsearch)
+k.set('n', '<leader>e', vim.cmd.NvimTreeToggle)
 
 -- handy quit & save
 k.set('n', '<leader>w', cmd.w)

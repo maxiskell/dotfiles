@@ -17,13 +17,13 @@ return require('packer').startup(function(use)
   use({ 'rose-pine/neovim', as = 'rose-pine' })
 
   use 'mbbill/undotree'
-  use 'stevearc/oil.nvim'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
   use 'crispgm/nvim-tabline'
   use 'windwp/nvim-autopairs'
   use 'numToStr/Comment.nvim'
   use 'lewis6991/gitsigns.nvim'
+  use 'nvim-tree/nvim-tree.lua'
   use 'alexghergh/nvim-tmux-navigation'
 
   use({
