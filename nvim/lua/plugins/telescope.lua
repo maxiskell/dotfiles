@@ -2,6 +2,12 @@ local telescope = require 'telescope'
 local actions = require 'telescope.actions'
 local builtin = require 'telescope.builtin'
 
+local lsp_settings = {
+  theme = 'ivy',
+  initial_mode = 'normal',
+  path_display = { 'smart' },
+}
+
 telescope.setup({
   defaults = {
     prompt_prefix = ' ',
@@ -32,6 +38,9 @@ telescope.setup({
       initial_mode = 'normal',
     },
     live_grep = { path_display = { 'hidden' } },
+    lsp_definitions = lsp_settings,
+    lsp_implementations = lsp_settings,
+    lsp_references = lsp_settings,
   },
 })
 
