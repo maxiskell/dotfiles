@@ -114,7 +114,10 @@ _G.packer_plugins = {
     path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["no-neck-pain.nvim"] = {
     loaded = true,
+    path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
+    url = "https://github.com/shortcuts/no-neck-pain.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

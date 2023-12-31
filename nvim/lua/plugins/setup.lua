@@ -63,6 +63,8 @@ return require('packer').startup(function(use)
 
   use 'mhartington/formatter.nvim'
 
+  use({ 'shortcuts/no-neck-pain.nvim', tag = '*' })
+
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
