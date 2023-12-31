@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cosmic-ui"] = {
-    loaded = true,
-    path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/cosmic-ui",
-    url = "https://github.com/CosmicNvim/cosmic-ui"
-  },
   ["formatter.nvim"] = {
     loaded = true,
     path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/formatter.nvim",
@@ -119,10 +114,7 @@ _G.packer_plugins = {
     path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["nui.nvim"] = {
     loaded = true,
-    path = "/Users/maxi/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,

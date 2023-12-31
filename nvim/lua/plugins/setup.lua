@@ -27,10 +27,6 @@ return require('packer').startup(function(use)
   use 'alexghergh/nvim-tmux-navigation'
 
   use({
-    'CosmicNvim/cosmic-ui',
-    requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-  })
-  use({
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     requires = {

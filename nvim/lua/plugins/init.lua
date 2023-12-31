@@ -1,7 +1,6 @@
 require 'plugins.autopairs'
 require 'plugins.color'
 require 'plugins.comment'
-require 'plugins.cosmic-ui'
 require 'plugins.formatter'
 require 'plugins.fugitive'
 require 'plugins.gitsgns'

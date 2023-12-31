@@ -71,3 +71,7 @@ k.set('n', '[[', cmd.lprev)
 
 -- we don't need you
 k.set('n', 'Q', '<nop>')
+
+-- LSP
+k.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>')
+k.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
