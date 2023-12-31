@@ -21,6 +21,27 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<cr>'] = cmp.mapping.confirm({ select = false }),
 })
 
+cmp.setup({
+  mapping = cmp_mappings,
+  select = cmp_select,
+  window = {
+    completion = {
+      border = 'rounded',
+      winhighlight = 'Normal:Pmenu',
+    },
+    documentation = {
+      border = 'rounded',
+      winhighlight = 'Normal:Pmenu',
+    },
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  }, {
+    { name = 'buffer' },
+  }),
+})
+
 lsp.set_preferences({
   sign_icons = {},
 })
@@ -30,7 +51,7 @@ lsp.setup_nvim_cmp({
   select = cmp_select,
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
   local k = vim.keymap
 
