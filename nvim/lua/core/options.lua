@@ -1,10 +1,9 @@
 local o = vim.opt
 
 -- appearance
-o.signcolumn = 'yes'
-o.background = 'light'
+o.signcolumn = "yes"
+o.background = "light"
 o.termguicolors = true
-o.showtabline = 2
 
 -- line numbers
 o.number = true
@@ -15,7 +14,11 @@ o.tabstop = 2
 o.shiftwidth = 2
 o.expandtab = true
 o.autoindent = true
-vim.cmd 'autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4'
+vim.cmd([[
+augroup go_indent
+  autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
+augroup END
+]])
 
 -- no line wrapping
 o.wrap = false
@@ -28,7 +31,7 @@ o.ignorecase = true
 o.smartcase = true
 
 -- backspace
-o.backspace = 'indent,eol,start'
+o.backspace = "indent,eol,start"
 
 -- split windows
 o.splitright = true
@@ -43,15 +46,15 @@ o.backup = false
 
 -- undo file
 o.undofile = true
-o.undodir = os.getenv 'HOME' .. '/.nvim/undodir'
+o.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 
 -- quick refresh
 o.updatetime = 50
 
 -- highlight on yank
-vim.cmd [[
+vim.cmd([[
 augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
 augroup END
-]]
+]])
