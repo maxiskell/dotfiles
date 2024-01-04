@@ -1,16 +1,24 @@
-require('no-neck-pain').setup({
-  buffers = {
-    scratchPad = {
-      -- set to `false` to
-      -- disable auto-saving
-      enabled = true,
-      -- set to `nil` to default
-      -- to current working directory
-      location = '~/notes/',
-    },
-    bo = {
-      filetype = 'md',
-    },
+return {
+  "shortcuts/no-neck-pain.nvim",
+  version = "*",
+  keys = {
+    { "<leader>nn", "<cmd>NoNeckPain<CR>" },
   },
-})
-vim.api.nvim_set_keymap('n', '<leader>nn', '<cmd>NoNeckPain<CR>', { noremap = true })
+  config = function()
+    require("no-neck-pain").setup({
+      buffers = {
+        scratchPad = {
+          -- set to `false` to
+          -- disable auto-saving
+          enabled = true,
+          -- set to `nil` to default
+          -- to current working directory
+          location = "~/notes/",
+        },
+        bo = {
+          filetype = "md",
+        },
+      },
+    })
+  end,
+}
