@@ -8,6 +8,7 @@ lsp.setup_servers({
   "gopls",
   "lua_ls",
   "tsserver",
+  "tailwindcss",
 })
 
 lsp.set_preferences({
