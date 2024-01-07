@@ -85,5 +85,4 @@ k.set("n", "<leader>D", "<cmd>lua vim.diagnostic.setloclist()<cr>")
 
 k.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
 k.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
-k.set("n", "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 k.set("n", "<leader>vws", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>")
