@@ -64,6 +64,9 @@ k.set("v", "K", ":m '<-2<cr>gv=gv")
 k.set("n", "+", "<c-a>")
 k.set("n", "-", "<c-x>")
 
+-- uper-case last word typed
+k.set("i", "<c-u>", "<esc>viwUea")
+
 -- quickfix navigation
 k.set("n", "]q", cmd.cnext)
 k.set("n", "[q", cmd.cprevious)
