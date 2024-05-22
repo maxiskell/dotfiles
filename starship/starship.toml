@@ -4,6 +4,7 @@ $git_branch\
 $git_state\
 $git_status\
 $nodejs\
+$bun\
 $golang\
 $fill\
 $cmd_duration $jobs\
@@ -17,6 +18,10 @@ disabled = true
 disabled = true
 
 [nodejs]
+format = "[$symbol($version )]($style)"
+detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb']
+
+[bun]
 format = "[$symbol($version )]($style)"
 
 [golang]
