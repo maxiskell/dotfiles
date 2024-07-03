@@ -3,6 +3,7 @@ return {
   tag = "0.1.5",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   keys = {
@@ -76,6 +77,13 @@ return {
       end,
       desc = "[F]ind [R]eferences",
     },
+    {
+      "<leader>fe",
+      function()
+        require("telescope").extensions.file_browser.file_browser()
+      end,
+      desc = "[F]ile [E]xplorer",
+    },
   },
   config = function()
     local telescope = require("telescope")
@@ -121,8 +129,15 @@ return {
         lsp_implementations = lsp_settings,
         lsp_references = lsp_settings,
       },
+      extensions = {
+        file_browser = {
+          theme = "ivy",
+          initial_mode = "normal",
+        },
+      },
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("file_browser")
   end,
 }
