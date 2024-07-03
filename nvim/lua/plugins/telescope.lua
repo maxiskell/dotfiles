@@ -133,6 +133,11 @@ return {
         file_browser = {
           theme = "ivy",
           initial_mode = "normal",
+          mappings = {
+            n = {
+              ["h"] = require("telescope._extensions.file_browser.actions").toggle_hidden,
+            },
+          },
         },
       },
     })
