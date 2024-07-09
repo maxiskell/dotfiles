@@ -19,6 +19,7 @@ return {
           "lua_ls",
           "tsserver",
           "tailwindcss",
+          "pyright",
         },
       })
 
@@ -26,6 +27,7 @@ return {
       require("lspconfig").gopls.setup({})
       require("lspconfig").tailwindcss.setup({})
       require("lspconfig").tsserver.setup({})
+      require("lspconfig").pyright.setup({})
 
       require("lspconfig").lua_ls.setup({
         settings = {
