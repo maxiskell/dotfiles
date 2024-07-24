@@ -6,6 +6,7 @@ $git_status\
 $nodejs\
 $bun\
 $golang\
+$python\
 $fill\
 $cmd_duration $jobs\
 $line_break\
@@ -28,6 +29,15 @@ format = "[$symbol($version )]($style)"
 symbol=" "
 style="green"
 format = "[$symbol($version )]($style)"
+
+# ~/.config/starship.toml
+
+[python]
+symbol=" "
+style = "green"
+format = "[$symbol$version (\\($virtualenv\\))]($style) "
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version", "setup.py", "Pipfile", "tox.ini"]
+detect_extensions = ["py"]
 
 [fill]
 symbol = " "
