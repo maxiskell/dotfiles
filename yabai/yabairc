@@ -1,6 +1,8 @@
-# bsp, stack or float
-yabai -m config layout bsp
+# scripting addition - see: https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
+yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 yabai -m config top_padding 10
@@ -24,4 +26,3 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Digital Colour Meter$" manage=off
 yabai -m rule --add app="Slack" title="Huddle" manage=off
-
