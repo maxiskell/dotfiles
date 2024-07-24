@@ -40,7 +40,6 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 # balance (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
 
-
 # increase window size
 shift + alt - w : yabai -m window --resize top:0:-20
 shift + alt - a : yabai -m window --resize left:-20:0
