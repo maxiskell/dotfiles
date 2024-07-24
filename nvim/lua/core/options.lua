@@ -15,8 +15,9 @@ o.shiftwidth = 2
 o.expandtab = true
 o.autoindent = true
 vim.cmd([[
-augroup go_indent
+augroup wide_indent
   autocmd FileType go setlocal shiftwidth=4 tabstop=4 softtabstop=4
+  autocmd FileType lua setlocal shiftwidth=4 tabstop=4 softtabstop=4
 augroup END
 ]])
 
