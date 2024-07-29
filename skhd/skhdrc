@@ -1,7 +1,7 @@
 # Apps
 # ----
 
-cmd - j : open /Applications/iTerm.app
+cmd - j : open /Applications/kitty.app
 shift + cmd - l : open /Applications/Arc.app
 shift + cmd - k : open /Applications/Slack.app
 
