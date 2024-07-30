@@ -13,21 +13,23 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "astro",
           "emmet_ls",
           "eslint",
           "gopls",
           "lua_ls",
-          "tsserver",
-          "tailwindcss",
           "pyright",
+          "tailwindcss",
+          "tsserver",
         },
       })
 
+      require("lspconfig").astro.setup({})
       require("lspconfig").eslint.setup({})
       require("lspconfig").gopls.setup({})
+      require("lspconfig").pyright.setup({})
       require("lspconfig").tailwindcss.setup({})
       require("lspconfig").tsserver.setup({})
-      require("lspconfig").pyright.setup({})
 
       require("lspconfig").lua_ls.setup({
         settings = {
@@ -41,6 +43,7 @@ return {
 
       require("lspconfig").emmet_ls.setup({
         filetypes = {
+          "astro",
           "css",
           "html",
           "javascriptreact",
