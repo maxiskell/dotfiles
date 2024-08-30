@@ -1,5 +1,8 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+# neovim
+export PATH="$PATH:/opt/nvim/"
+
 # homebrew
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/bin:${PATH}"
