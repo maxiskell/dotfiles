@@ -63,16 +63,18 @@ zstyle ':autocomplete:*history*:*' insert-unambiguous yes
 zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
 
 # fzf - https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # rosepine-dawn theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=fg:#797593,bg:#faf4ed,hl:#5f87af
  --color=fg+:#575279,bg+:#f2e9e1,hl+:#b4637a
  --color=info:#ea9d34,prompt:#575279,pointer:#286983
  --color=marker:#907aa9,spinner:#575279,header:#87afaf'
-source <(fzf --zsh)
+# source <(fzf --zsh)
 
 # asdf - https://asdf-vm.com/
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
+. "$HOME/.asdf/asdf.sh"
 
 # zoxide - https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
