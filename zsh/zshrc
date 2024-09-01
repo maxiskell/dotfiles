@@ -94,10 +94,5 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 
-# pnpm
-export PNPM_HOME="/Users/maxi/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+setxkbmap us
+setxkbmap -option caps:escape
