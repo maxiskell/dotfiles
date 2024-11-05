@@ -94,6 +94,3 @@ export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
-
-setxkbmap us
-setxkbmap -option caps:escape
