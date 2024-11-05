@@ -45,13 +45,15 @@ alias vi="nvim"
 alias oc="opencode"
 alias pn="pnpm"
 alias pj="pnpm projen"
-alias assume="source /opt/homebrew/bin/assume"
-alias ass="assume -t fanvue-landlord-dev/LocalDevelopment"
-alias fixaudio="sudo killall coreaudiod"
-alias fvp="assume --exec="fvproxy" --region="eu-west-1" fanvue-landlord-dev/LocalDevelopment"
-alias fvcw="assume --exec="cw" --region="eu-west-1" fanvue-landlord-dev/LocalDevelopment"
 alias wip="git add -A && git commit -am "wip" --no-verify"
 alias claude="~/.local/bin/claude"
+
+# zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=standout
 
 # zsh-autocomplete
 fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
