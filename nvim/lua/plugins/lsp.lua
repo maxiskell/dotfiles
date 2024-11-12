@@ -18,6 +18,7 @@ return {
           "eslint",
           "gopls",
           "lua_ls",
+          "prismals",
           "pyright",
           "tailwindcss",
           "tsserver",
@@ -27,6 +28,7 @@ return {
       require("lspconfig").astro.setup({})
       require("lspconfig").eslint.setup({})
       require("lspconfig").gopls.setup({})
+      require("lspconfig").prismals.setup({})
       require("lspconfig").pyright.setup({})
       require("lspconfig").tailwindcss.setup({})
       require("lspconfig").tsserver.setup({})
