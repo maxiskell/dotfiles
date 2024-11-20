@@ -21,7 +21,7 @@ return {
           "prismals",
           "pyright",
           "tailwindcss",
-          "tsserver",
+          "ts_ls",
         },
       })
 
@@ -31,7 +31,7 @@ return {
       require("lspconfig").prismals.setup({})
       require("lspconfig").pyright.setup({})
       require("lspconfig").tailwindcss.setup({})
-      require("lspconfig").tsserver.setup({})
+      require("lspconfig").ts_ls.setup({})
 
       require("lspconfig").lua_ls.setup({
         settings = {
