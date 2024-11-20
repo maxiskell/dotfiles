@@ -19,7 +19,6 @@ brew install htop
 brew install httpie
 brew install jq
 brew install neovim
-brew install node
 brew install prettierd
 brew install ripgrep
 brew install skhd
@@ -31,6 +30,5 @@ brew install tree-sitter
 brew install wget
 brew install yabai
 brew install zoxide
-brew install font-sf-mono-nerd-font
 
 echo "\nDone!\n"
