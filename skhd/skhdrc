@@ -4,6 +4,7 @@
 meh - j : open /Applications/kitty.app
 meh - l : open /Applications/Google\ Chrome.app/
 meh - k : open /Applications/Slack.app
+meh - w : open /Applications/WhatsApp.app
 meh - f : open /Applications/Spotify.app
 
 # Focus
