@@ -1,9 +1,9 @@
 # Apps
 # ----
 
-cmd - j : open /Applications/kitty.app
-shift + cmd - l : open /Applications/Arc.app
-shift + cmd - k : open /Applications/Slack.app
+meh - j : open /Applications/kitty.app
+meh - l : open /Applications/Google\ Chrome.app/
+meh - k : open /Applications/Slack.app
 
 # Focus
 # -----
