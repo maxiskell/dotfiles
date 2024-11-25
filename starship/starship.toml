@@ -30,8 +30,6 @@ symbol=" "
 style="green"
 format = "[$symbol($version )]($style)"
 
-# ~/.config/starship.toml
-
 [python]
 symbol=" "
 style = "green"
