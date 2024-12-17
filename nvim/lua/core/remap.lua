@@ -48,7 +48,6 @@ k.set("n", "<leader>Y", '"+Y')
 k.set("n", "<leader>sr", "<c-w>v")
 k.set("n", "<leader>sd", "<c-w>s")
 k.set("n", "<leader>se", "<c-w>=")
-k.set("n", "<leader>sx", cmd.close)
 
 -- Splits traveler
 k.set("n", "<c-h>", "<c-w>h")
