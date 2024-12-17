@@ -49,7 +49,7 @@ k.set("n", "<leader>sr", "<c-w>v")
 k.set("n", "<leader>sd", "<c-w>s")
 k.set("n", "<leader>se", "<c-w>=")
 
--- Splits traveler
+-- split traveler
 k.set("n", "<c-h>", "<c-w>h")
 k.set("n", "<c-j>", "<c-w>j")
 k.set("n", "<c-k>", "<c-w>k")
