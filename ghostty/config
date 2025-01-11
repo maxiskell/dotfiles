@@ -1,0 +1,23 @@
+theme = rose-pine-dawn
+
+font-size = 20
+font-family = ""
+font-family = "GohuFont uni14 Nerd Font"
+
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+
+# Make it play well with tmux
+keybind = alt+1=text:\x1b1
+keybind = alt+2=text:\x1b2
+keybind = alt+3=text:\x1b3
+keybind = alt+4=text:\x1b4
+keybind = alt+5=text:\x1b5
+keybind = alt+6=text:\x1b6
+keybind = alt+7=text:\x1b7
+keybind = alt+8=text:\x1b8
+keybind = alt+9=text:\x1b9
