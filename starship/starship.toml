@@ -3,6 +3,7 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$lua\
 $nodejs\
 $bun\
 $golang\
@@ -17,6 +18,11 @@ disabled = true
 
 [hostname]
 disabled = true
+
+[lua]
+symbol = " "
+style="purple"
+format = "[$symbol($version )]($style)"
 
 [nodejs]
 format = "[$symbol($version )]($style)"
