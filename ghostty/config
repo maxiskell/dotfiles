@@ -11,6 +11,8 @@ window-padding-balance = true
 macos-option-as-alt = true
 macos-titlebar-style = hidden
 
+mouse-hide-while-typing = true
+
 # Make it play well with tmux
 keybind = alt+1=text:\x1b1
 keybind = alt+2=text:\x1b2
