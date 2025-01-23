@@ -2,8 +2,8 @@ theme = rose-pine-dawn
 
 font-size = 20
 font-family = ""
-font-family = "GohuFont uni14 Nerd Font"
-font-thicken = true
+font-family = "Source Code Pro"
+font-style = "SemiBold"
 
 window-padding-x = 8
 window-padding-y = 8
