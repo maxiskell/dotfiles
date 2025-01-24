@@ -8,6 +8,7 @@ $nodejs\
 $bun\
 $golang\
 $python\
+$aws\
 $fill\
 $cmd_duration $jobs\
 $line_break\
@@ -18,6 +19,11 @@ disabled = true
 
 [hostname]
 disabled = true
+
+[aws]
+format = '[$symbol($profile )(\($region\) )]($style)'
+style = 'bold yellow'
+symbol = '  '
 
 [lua]
 symbol = " "
