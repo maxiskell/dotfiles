@@ -43,6 +43,7 @@ alias tls="tmux ls"
 alias tns="tmux new -s"
 alias v="nvim"
 alias vi="nvim"
+alias pn="pnpm"
 alias assume="source /opt/homebrew/bin/assume"
 alias fvp="assume --exec="fvproxy" --region="eu-west-1" fanvue-landlord-dev/LocalDevelopment"
 
