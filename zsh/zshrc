@@ -47,21 +47,10 @@ alias pn="pnpm"
 alias assume="source /opt/homebrew/bin/assume"
 alias fvp="assume --exec="fvproxy" --region="eu-west-1" fanvue-landlord-dev/LocalDevelopment"
 
-# zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=standout
-
 # zsh-autocomplete
 fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
-zstyle ':autocomplete:*' delay 0.5  # seconds (float)
-zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
-zstyle ':autocomplete:*history*:*' insert-unambiguous yes
-zstyle ':autocomplete:menu-search:*' insert-unambiguous yes
 
 # fzf - https://github.com/junegunn/fzf
 # rosepine-dawn theme
