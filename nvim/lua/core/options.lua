@@ -32,7 +32,7 @@ o.backspace = "indent,eol,start"
 o.splitright = true
 o.splitbelow = true
 
--- only the current split status
+-- one statusline to rule them all
 o.laststatus = 3
 
 -- no swaps or backups
@@ -55,6 +55,4 @@ augroup END
 ]])
 
 -- LSP
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-vim.diagnostic.config({ float = { border = "rounded" } })
+vim.diagnostic.config({ virtual_text = true })

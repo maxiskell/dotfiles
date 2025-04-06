@@ -7,8 +7,6 @@ local cmd = vim.cmd
 k.set("n", ";", ":")
 k.set("n", "H", "^")
 k.set("n", "L", "$")
-k.set("n", "j", "gj")
-k.set("n", "k", "gk")
 k.set("n", "<leader>h", cmd.nohlsearch)
 
 -- indent mode
@@ -67,24 +65,14 @@ k.set("n", "-", "<c-x>")
 k.set("i", "<c-u>", "<esc>viwUea")
 
 -- quickfix navigation
-k.set("n", "]q", cmd.cnext)
-k.set("n", "[q", cmd.cprevious)
-
--- location list navigation
-k.set("n", "]]", cmd.lnext)
-k.set("n", "[[", cmd.lprev)
+k.set("n", "]]", cmd.cnext)
+k.set("n", "[[", cmd.cprevious)
 
 -- we don't need you
 k.set("n", "Q", "<nop>")
 
--- LSP
-k.set("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<cr>")
+-- lsp diagnostic
 k.set("n", "<leader>j", "<cmd>lua vim.diagnostic.open_float()<cr>")
-
 k.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
 k.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-k.set("n", "<leader>D", "<cmd>lua vim.diagnostic.setloclist()<cr>")
-
-k.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>")
-k.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>")
-k.set("n", "<leader>vws", "<cmd>lua vim.lsp.buf.workspace_symbol()<cr>")
+k.set("n", "<leader>D", "<cmd>lua vim.diagnostic.setqflist()<cr>")

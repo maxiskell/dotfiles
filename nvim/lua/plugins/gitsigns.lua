@@ -12,7 +12,9 @@ return {
         end
 
         vim.api.nvim_call_function("system", {
-          "git -C " .. vim.api.nvim_call_function("expand", { "%:p:h" }) .. " rev-parse",
+          "git -C "
+            .. vim.api.nvim_call_function("expand", { "%:p:h" })
+            .. " rev-parse",
         })
 
         if vim.api.nvim_get_vvar("shell_error") ~= 0 then

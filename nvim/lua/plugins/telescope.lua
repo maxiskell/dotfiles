@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.5",
+  tag = "0.1.8",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
@@ -62,13 +62,6 @@ return {
         require("telescope.builtin").diagnostics()
       end,
       desc = "[F]ind in [D]iagnostics",
-    },
-    {
-      "<leader>fi",
-      function()
-        require("telescope.builtin").lsp_implementations()
-      end,
-      desc = "[F]ind [I]mplementation(s)",
     },
     {
       "<leader>fr",
