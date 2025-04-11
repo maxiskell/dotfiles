@@ -65,8 +65,8 @@ k.set("n", "-", "<c-x>")
 k.set("i", "<c-u>", "<esc>viwUea")
 
 -- quickfix navigation
-k.set("n", "]]", cmd.cnext)
-k.set("n", "[[", cmd.cprevious)
+k.set("n", "<m-j>", cmd.cnext)
+k.set("n", "<m-k>", cmd.cprevious)
 
 -- we don't need you
 k.set("n", "Q", "<nop>")
