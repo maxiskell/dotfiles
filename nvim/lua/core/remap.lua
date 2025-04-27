@@ -64,9 +64,25 @@ k.set("n", "-", "<c-x>")
 -- uper-case last word typed
 k.set("i", "<c-u>", "<esc>viwUea")
 
--- quickfix navigation
-k.set("n", "<m-j>", cmd.cnext)
-k.set("n", "<m-k>", cmd.cprevious)
+--- Safe quickfix navigation
+--- (avoid "no more items" error)
+---
+---@param command "cnext"|"cprevious"
+local function quickfixmove(command)
+  local ok = pcall(cmd, command)
+  if not ok then
+    vim.api.nvim_echo({ { "No more items" } }, false, {})
+  else
+    vim.api.nvim_echo({ { "" } }, false, {})
+  end
+end
+
+k.set("n", "<m-j>", function()
+  quickfixmove("cnext")
+end)
+k.set("n", "<m-k>", function()
+  quickfixmove("cprevious")
+end)
 
 -- we don't need you
 k.set("n", "Q", "<nop>")
