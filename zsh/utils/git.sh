@@ -55,6 +55,11 @@ git_develop_branch() {
   echo develop
 }
 
+# Fuzzy branch checkout
+gcof() {
+  git branch --format="%(refname:short)" | fzf | xargs -r git checkout
+}
+
 #
 # Aliases
 # (sorted alphabetically)
