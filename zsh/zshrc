@@ -9,7 +9,6 @@ source "$ZSH_PLUGINS/zsh-history-substring-search/zsh-history-substring-search.p
 source "$ZSH_PLUGINS/zsh-you-should-use/zsh-you-should-use.plugin.zsh"
 
 source "$ZSH/config/path.sh"
-source "$ZSH/functions/ix.sh"
 source "$ZSH/utils/directories.sh"
 source "$ZSH/utils/git.sh"
 
