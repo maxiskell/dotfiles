@@ -34,9 +34,6 @@ k.set("n", "J", "mzJ`z")
 -- remove without adding to clipboard
 k.set("n", "x", '"_x"')
 
--- paste without replacing the yanked
-k.set("x", "<leader>p", '"_dP')
-
 -- yank to system clipboard
 k.set("n", "<leader>y", '"+y')
 k.set("v", "<leader>y", '"+y')
