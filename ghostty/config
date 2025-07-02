@@ -3,7 +3,7 @@ theme = rose-pine-dawn
 font-size = 20
 font-family = ""
 font-family = "Source Code Pro"
-font-style = "SemiBold"
+font-style = "Medium"
 
 window-padding-x = 8
 window-padding-y = 8
