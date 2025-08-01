@@ -21,6 +21,9 @@ o.wrap = false
 -- leave some room
 o.scrolloff = 8
 
+-- nice-looking windows
+o.winborder = "rounded"
+
 -- search
 o.ignorecase = true
 o.smartcase = true
