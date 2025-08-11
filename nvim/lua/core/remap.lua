@@ -4,10 +4,15 @@ local k = vim.keymap
 local cmd = vim.cmd
 
 -- the essentials
-k.set("n", ";", ":")
 k.set("n", "H", "^")
 k.set("n", "L", "$")
 k.set("n", "<leader>h", cmd.nohlsearch)
+
+-- split traveler
+k.set("n", "<c-h>", "<c-w>h")
+k.set("n", "<c-j>", "<c-w>j")
+k.set("n", "<c-k>", "<c-w>k")
+k.set("n", "<c-l>", "<c-w>l")
 
 -- indent mode
 k.set("v", "<", "<gv")
@@ -39,27 +44,9 @@ k.set("n", "<leader>y", '"+y')
 k.set("v", "<leader>y", '"+y')
 k.set("n", "<leader>Y", '"+Y')
 
--- split
-k.set("n", "<leader>sr", "<c-w>v")
-k.set("n", "<leader>sd", "<c-w>s")
-k.set("n", "<leader>se", "<c-w>=")
-
--- split traveler
-k.set("n", "<c-h>", "<c-w>h")
-k.set("n", "<c-j>", "<c-w>j")
-k.set("n", "<c-k>", "<c-w>k")
-k.set("n", "<c-l>", "<c-w>l")
-
 -- move selection around
 k.set("v", "J", ":m '>+1<cr>gv=gv")
 k.set("v", "K", ":m '<-2<cr>gv=gv")
-
--- increment and decrement a number
-k.set("n", "+", "<c-a>")
-k.set("n", "-", "<c-x>")
-
--- uper-case last word typed
-k.set("i", "<c-u>", "<esc>viwUea")
 
 --- Safe quickfix navigation
 --- (avoid "no more items" error)
