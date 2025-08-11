@@ -9,7 +9,7 @@ o.termguicolors = true
 o.number = true
 o.relativenumber = true
 
--- tabs & inddentation
+-- tabs & indentation
 o.tabstop = 2
 o.shiftwidth = 2
 o.expandtab = true
