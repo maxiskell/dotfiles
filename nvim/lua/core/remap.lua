@@ -44,6 +44,14 @@ k.set("n", "<leader>y", '"+y')
 k.set("v", "<leader>y", '"+y')
 k.set("n", "<leader>Y", '"+Y')
 
+-- current path to system clipboard
+-- @nicolasdanelon <3
+k.set("n", "<C-r>%", function()
+  local filepath = vim.fn.expand("%")
+  vim.fn.setreg("+", filepath)
+  print(filepath)
+end)
+
 -- move selection around
 k.set("v", "J", ":m '>+1<cr>gv=gv")
 k.set("v", "K", ":m '<-2<cr>gv=gv")
