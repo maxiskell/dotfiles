@@ -52,27 +52,11 @@ return {
         max_width = 100,
         max_height = 25,
         border = "rounded",
-        win_options = {
-          winblend = 10,
-        },
         -- This is the config that will be passed to nvim_open_win.
         -- Change values here to customize the layout
         override = function(conf)
           return conf
         end,
-      },
-      progress = {
-        max_width = 0.9,
-        min_width = { 40, 0.4 },
-        width = nil,
-        max_height = { 10, 0.9 },
-        min_height = { 5, 0.1 },
-        height = nil,
-        border = "rounded",
-        minimized_border = "none",
-        win_options = {
-          winblend = 0,
-        },
       },
     })
   end,
