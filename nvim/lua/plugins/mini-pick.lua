@@ -1,20 +1,7 @@
 return {
   "echasnovski/mini.pick",
   init = function()
-    local height = math.floor(0.618 * vim.o.lines)
-    local width = math.floor(0.618 * vim.o.columns)
-
-    require("mini.pick").setup({
-      window = {
-        config = {
-          anchor = "NW",
-          height = height,
-          width = width,
-          row = math.floor(0.5 * (vim.o.lines - height)),
-          col = math.floor(0.5 * (vim.o.columns - width)),
-        },
-      },
-    })
+    require("mini.pick").setup()
   end,
   keys = {
     {
