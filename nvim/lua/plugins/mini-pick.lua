@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.pick",
-  init = function()
+  config = function()
     require("mini.pick").setup()
   end,
   keys = {
