@@ -25,17 +25,5 @@ return {
         require("nvim-tmux-navigation").NvimTmuxNavigateRight()
       end,
     },
-    {
-      "<C-\\>",
-      function()
-        require("nvim-tmux-navigation").NvimTmuxNavigateLastActive()
-      end,
-    },
-    {
-      "<C-Space>",
-      function()
-        require("nvim-tmux-navigation").NvimTmuxNavigateNext()
-      end,
-    },
   },
 }
