@@ -46,7 +46,7 @@ k.set("n", "<leader>Y", '"+Y')
 
 -- current path to system clipboard
 -- @nicolasdanelon <3
-k.set("n", "<C-r>%", function()
+k.set("i", "<C-r>%", function()
   local filepath = vim.fn.expand("%")
   vim.fn.setreg("+", filepath)
   print(filepath)
