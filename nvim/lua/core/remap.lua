@@ -45,11 +45,8 @@ k.set("v", "<leader>y", '"+y')
 k.set("n", "<leader>Y", '"+Y')
 
 -- current path to system clipboard
--- @nicolasdanelon <3
 k.set("i", "<C-r>%", function()
-  local filepath = vim.fn.expand("%")
-  vim.fn.setreg("+", filepath)
-  print(filepath)
+  vim.fn.setreg("+", vim.fn.expand("%"))
 end)
 
 -- move selection around
