@@ -76,6 +76,11 @@ end)
 -- we don't need you
 k.set("n", "Q", "<nop>")
 
+-- lsp signature while typing
+k.set("i", "<C-k>", function()
+  vim.lsp.buf.signature_help()
+end)
+
 -- lsp diagnostic
 k.set("n", "<leader>j", "<cmd>lua vim.diagnostic.open_float()<cr>")
 k.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
