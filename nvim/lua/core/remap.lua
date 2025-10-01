@@ -7,6 +7,7 @@ local cmd = vim.cmd
 k.set("n", "H", "^")
 k.set("n", "L", "$")
 k.set("n", "<leader>h", cmd.nohlsearch)
+k.set("n", "<leader>e", cmd.Explore)
 
 -- split traveler
 k.set("n", "<c-h>", "<c-w>h")
