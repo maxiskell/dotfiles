@@ -1,9 +1,8 @@
-theme = rose-pine-dawn
+theme = Rose Pine Dawn
 
 font-size = 20
-font-family = ""
-font-family = "Source Code Pro"
-font-style = "Medium"
+font-family = Source Code Pro
+font-style = Medium
 
 window-padding-x = 8
 window-padding-y = 8
