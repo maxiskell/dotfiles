@@ -11,6 +11,8 @@ return {
         typescript = { "prettierd" },
         typescriptreact = { "prettierd" },
         prisma = { "prettierd" },
+        markdown = { "prettierd" },
+        python = { "black" },
       },
       format_on_save = {
         timeout_ms = 2000,
