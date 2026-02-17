@@ -20,3 +20,5 @@ export CPPFLAGS="-I/opt/homebrew/opt/jpeg/include"
 
 # For pkg-config to find jpeg you may need to set:
 export PKG_CONFIG_PATH="/opt/homebrew/opt/jpeg/lib/pkgconfig"
+
+export PATH="$HOME/.local/bin:$PATH"
