@@ -10,5 +10,5 @@ vim.lsp.enable({
   "prismals",
   "pyright",
   "tailwindcss",
-  "vtsls",
+  "tsgo",
 })
