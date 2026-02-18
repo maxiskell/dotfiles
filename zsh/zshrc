@@ -42,6 +42,7 @@ alias tls="tmux ls"
 alias tns="tmux new -s"
 alias v="nvim"
 alias vi="nvim"
+alias oc="opencode"
 alias pn="pnpm"
 alias assume="source /opt/homebrew/bin/assume"
 alias ass="assume -t fanvue-landlord-dev/LocalDevelopment"
@@ -92,3 +93,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# opencode
+export PATH=/Users/maxi/.opencode/bin:$PATH
