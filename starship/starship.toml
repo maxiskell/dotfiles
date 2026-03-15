@@ -15,9 +15,12 @@ $line_break\
 $character"""
 
 [character]
-success_symbol = '[󱗞](bold green)'
-error_symbol = '[󱗞](bold red)'
-vimcmd_symbol = '[󱗞](bold purple)'
+success_symbol = '[󱗞](green)'
+error_symbol = '[󱗞](red)'
+vimcmd_symbol = '[󱗞](purple)'
+
+[directory]
+style="white"
 
 [username]
 disabled = true
@@ -27,7 +30,7 @@ disabled = true
 
 [aws]
 format = '[$symbol($profile )(\($region\) )]($style)'
-style = 'bold yellow'
+style = 'yellow'
 symbol = '  '
 
 [lua]
@@ -44,7 +47,7 @@ detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb', '
 format = "[$symbol($version )]($style)"
 symbol="󰳮 "
 style = "green"
-detect_files = ['package.json', '.node-version', 'bunfig.toml', 'bun.lockb', 'bun.lock']
+detect_files = ['bunfig.toml', 'bun.lockb', 'bun.lock']
 
 [golang]
 symbol=" "
@@ -64,17 +67,17 @@ symbol = " "
 [git_branch]
 symbol = " "
 format = "[$symbol$branch]($style) "
-style = "white"
+style = "green"
 
 [jobs]
 symbol = ""
-style = "bold red"
+style = "red"
 number_threshold = 1
 format = "[$symbol]($style)"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
+style = "green"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
