@@ -37,10 +37,14 @@ format = "[$symbol($version )]($style)"
 
 [nodejs]
 format = "[$symbol($version )]($style)"
-detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb']
+style = "green"
+detect_files = ['package.json', '.node-version', '!bunfig.toml', '!bun.lockb', '!bun.lock']
 
 [bun]
 format = "[$symbol($version )]($style)"
+symbol="󰳮 "
+style = "green"
+detect_files = ['package.json', '.node-version', 'bunfig.toml', 'bun.lockb', 'bun.lock']
 
 [golang]
 symbol=" "
