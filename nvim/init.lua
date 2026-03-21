@@ -18,6 +18,6 @@ require("lazy").setup("plugins", {})
 -- if no file/dir selected, open file picker
 if vim.fn.argc() == 0 then
   vim.schedule(function()
-    require("mini.pick").builtin.files()
+    require("telescope.builtin").find_files()
   end)
 end
