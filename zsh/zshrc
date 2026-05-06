@@ -59,12 +59,11 @@ bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
 bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
 
 # fzf - https://github.com/junegunn/fzf
-# rosepine-dawn theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#797593,bg:#faf4ed,hl:#5f87af
- --color=fg+:#575279,bg+:#f2e9e1,hl+:#b4637a
- --color=info:#ea9d34,prompt:#575279,pointer:#286983
- --color=marker:#907aa9,spinner:#575279,header:#87afaf'
+ --color=fg:#d8dee9,bg:#2e3440,hl:#88c0d0
+ --color=fg+:#eceff4,bg+:#3b4252,hl+:#81a1c1
+ --color=info:#a3be8c,prompt:#81a1c1,pointer:#88c0d0
+ --color=marker:#bf616a,spinner:#81a1c1,header:#5e81ac'
 source <(fzf --zsh)
 
 # asdf - https://asdf-vm.com/
