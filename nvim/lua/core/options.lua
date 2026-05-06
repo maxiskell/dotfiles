@@ -2,7 +2,7 @@ local o = vim.opt
 
 -- appearance
 o.signcolumn = "yes"
-o.background = "light"
+o.background = "dark"
 o.termguicolors = true
 
 -- line numbers
