@@ -7,6 +7,7 @@ vim.lsp.enable({
   "eslint",
   "gopls",
   "lua_ls",
+  "ols",
   "prismals",
   "pyright",
   "tailwindcss",
