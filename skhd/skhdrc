@@ -1,7 +1,14 @@
-meh - i : open /Applications/WhatsApp.app
-meh - j : open /Applications/ghostty.app
-meh - k : open /Applications/Helium.app
-meh - l : open /Applications/Slack.app
-meh - m : open /System/Applications/Music.app
-meh - o : open /Applications/Discord.app
-meh - u : open ~/Applications/zoom.us.app
+# meh - i : open /Applications/WhatsApp.app
+# meh - j : open /Applications/ghostty.app
+# meh - k : open /Applications/Helium.app
+# meh - l : open /Applications/Slack.app
+# meh - m : open /System/Applications/Music.app
+# meh - o : open /Applications/Discord.app
+# meh - u : open ~/Applications/zoom.us.app
+ctrl+alt - i : open /Applications/WhatsApp.app
+ctrl+alt - j : open /Applications/ghostty.app
+ctrl+alt - k : open /Applications/Helium.app
+ctrl+alt - l : open /Applications/Slack.app
+ctrl+alt - m : open /System/Applications/Music.app
+ctrl+alt - o : open /Applications/Discord.app
+ctrl+alt - u : open ~/Applications/zoom.us.app
