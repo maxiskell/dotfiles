@@ -1,0 +1,18 @@
+{
+  "attribution": {},
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "sonnet",
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); cwd=$(echo \"$input\" | jq -r '.workspace.current_dir'); model=$(echo \"$input\" | jq -r '.model.display_name'); git_branch=$(cd \"$cwd\" 2>/dev/null && git branch --show-current 2>/dev/null); git_status=$(cd \"$cwd\" 2>/dev/null && git status --porcelain 2>/dev/null | wc -l | tr -d ' '); dir_name=$(basename \"$cwd\"); printf \"\\033[0;37m %s\\033[0m\" \"$dir_name\"; if [ -n \"$git_branch\" ]; then printf \"\\033[0;37m  %s\\033[0m\" \"$git_branch\"; fi; if [ \"$git_status\" -gt 0 ]; then printf \"\\033[0;36m [%s]\\033[0m\" \"$git_status\"; fi; if [ -f \"$cwd/package.json\" ] && command -v node >/dev/null 2>&1; then node_version=$(node --version 2>/dev/null | sed 's/v//'); printf \"\\033[0;32m %s\\033[0m\" \"$node_version\"; fi; printf \"\\033[0;33m %s\\033[0m\" \"$model\""
+  },
+  "awaySummaryEnabled": false,
+  "tui": "default",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "custom:rose-pine-dawn",
+  "editorMode": "vim",
+  "gitAttribution": false
+}
