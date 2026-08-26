@@ -48,13 +48,6 @@ alias pj="pnpm projen"
 alias wip="git add -A && git commit -am "wip" --no-verify"
 alias claude="~/.local/bin/claude"
 
-# zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=standout
-
 # zsh-autocomplete
 fpath=($ZSH_PLUGINS/zsh-completions/src $fpath)
 bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
