@@ -5,7 +5,7 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH="/opt/homebrew/bin:${PATH}"
 
 # pnpm
-export PNPM_HOME="/Users/maxi/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # Go

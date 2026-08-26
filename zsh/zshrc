@@ -81,7 +81,7 @@ eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
 
 # bun completions
-[ -s "/Users/maxi/.bun/_bun" ] && source "/Users/maxi/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -89,7 +89,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/maxi/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -97,4 +97,4 @@ esac
 # pnpm end
 
 # opencode
-export PATH=/Users/maxi/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
