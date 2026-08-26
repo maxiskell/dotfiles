@@ -90,7 +90,6 @@ eval "$(direnv hook zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
