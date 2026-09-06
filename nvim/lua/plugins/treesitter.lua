@@ -11,6 +11,7 @@ return {
         "html",
         "javascript",
         "lua",
+        "odin",
         "query",
         "rust",
         "typescript",
