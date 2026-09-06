@@ -87,4 +87,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
 export PATH="/opt/nvim:$PATH"
-export PATH="$HOME/dev/odin/odin:$PATH"
+export PATH="$HOME/dev/odin:$PATH"
