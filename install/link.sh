@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "\nCreating symlinks for ~./config directories"
 echo "===========================================\n"
