@@ -21,14 +21,12 @@ brew install jq
 brew install neovim
 brew install prettierd
 brew install ripgrep
-brew install skhd
 brew install starship
 brew install tmux
 brew install trash
 brew install tree
 brew install tree-sitter
 brew install wget
-brew install yabai
 brew install zoxide
 
 echo "\nDone!\n"
