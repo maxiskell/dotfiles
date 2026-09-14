@@ -6,8 +6,5 @@ export PATH="$PATH:$HOME/.local/bin"
 # neovim
 export PATH="$PATH:/opt/nvim/"
 
-# homebrew
-export PATH="/opt/homebrew/bin:${PATH}"
-
 # Go
 export PATH="/usr/local/go/bin:$PATH"
