@@ -82,4 +82,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
+
+# odin
 export PATH="$HOME/dev/odin:$PATH"
