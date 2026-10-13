@@ -4,7 +4,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="$PATH:$HOME/.local/bin"
 
 # neovim
-export PATH="$PATH:/opt/nvim/"
+export PATH="/opt/nvim/bin:$PATH"
 
 # Go
 export PATH="/usr/local/go/bin:$PATH"
