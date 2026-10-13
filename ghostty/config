@@ -1,5 +1,6 @@
 theme = Rose Pine Dawn
 
+window-theme = ghostty
 window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
